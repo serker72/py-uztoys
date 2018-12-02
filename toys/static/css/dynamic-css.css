@@ -1,0 +1,19 @@
+﻿body{background-repeat:no-repeat;background-size:cover;background-attachment:fixed;background-position:center center}
+.page-title-margin{margin-top:25px;margin-bottom:55px}
+.archive-title-margin{margin-top:25px;margin-bottom:55px}
+.single-blog-title-margin{margin-top:25px;margin-bottom:55px}
+body{font-family:"Varela Round";font-weight:400;font-style:normal;font-size:14px}
+h1{font-family:"Playfair Display";font-weight:400;font-style:normal;font-size:36px}
+h2{font-family:"Playfair Display";font-weight:400;font-style:normal;font-size:28px}
+h3{font-family:"Playfair Display";font-weight:400;font-style:normal;font-size:24px}
+h4{font-family:"Playfair Display";font-weight:400;font-style:normal;font-size:21px}
+h5{font-family:"Playfair Display";font-weight:400;font-style:normal;font-size:18px}
+h6{font-family:"Playfair Display";font-weight:400;font-style:normal;font-size:14px}
+{font-family:"Varela Round"}
+{font-family:"Playfair Display"}
+.page-title-inner
+h1{font-family:"Playfair Display";text-transform:none;font-weight:400;font-style:normal;color:#333;font-size:35px}
+.page-title-inner .page-sub-title{font-family:"Playfair Display";text-transform:none;font-weight:400;font-style:italic;color:#333;font-size:14px}
+.archive-product-title-margin{margin-top:25px;margin-bottom:55px}
+.single-product-title-margin{margin-top:25px;margin-bottom:55px}
+.portfolio-title-margin{margin-top:25px;margin-bottom:55px}

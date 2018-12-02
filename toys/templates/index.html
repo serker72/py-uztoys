@@ -1,0 +1,957 @@
+{% load toys_tags %}
+{% load static %}
+{% load mathfilters %}
+<!DOCTYPE html>
+<html class="js_active  vc_desktop  vc_transform  vc_transform  vc_transform  yes-js js_active js js rgba backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csstransitions fontface" lang="ru">
+	<head>
+		<title>Юзовка Игрушки</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<link rel="stylesheet" href="{% static 'css/theme.css' %}">
+		<link rel="stylesheet" href="{% static 'css/header-custom.css' %}">
+		<link rel="stylesheet" href="{% static 'css/dynamic-css.css' %}">
+		<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+		<link rel="stylesheet" href="{% static 'css/vc_shortcodes-custom-css.css' %}">
+		<link rel="stylesheet" href="{% static 'css/woocommerce-smallscreen.css' %}">
+		<link rel="stylesheet" href="{% static 'css/wp-css.css' %}">
+		
+		<script src="{% static 'js/apps_body.js' %}"></script>
+		<script src="{% static 'js/apps_head.js' %}"></script>
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/jquery_plugins.js' %}"></script>
+		<script src="{% static 'js/wp-emoji-release.min.js' %}"></script>
+	</head>
+
+	<body class="page-template-default page page-id-30 woocommerce-js footer-static header-2 woocommerce wpb-js-composer js-comp-ver-5.1.1 vc_responsive">
+		<div id="yith-wcwl-popup-message" style="display: none;">
+			<div id="yith-wcwl-message"></div>
+		</div>
+		<div id="wrapper">
+			<!--div class="top-bar mobile-top-bar-hide">
+				<div class="container">
+					<div class="row">
+    					<div class="sidebar top-bar-left col-md-4"> 
+						</div>
+						<div class="sidebar top-bar-right col-md-8"> 
+							<aside id="text-6" class="separate-right p-color widget widget_text">
+								<div class="textwidget">Юзовка Игрушки</div> 
+							</aside>
+							<aside id="nav_menu-5" class="widget widget_nav_menu">
+								<div class="menu-topbar-menu-container">
+									<ul id="menu-topbar-menu" class="menu">
+										<li id="menu-item-home" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home">
+											<a href="/">Главная</a>
+										</li>
+										<li id="menu-item-toys" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-toys">
+											<a href="#">
+    											<span class="x-menu-text">Игрушки <i class="fa fa-angle-down"></i></span>
+											</a>
+											{% get_main_categories as main_categories %}
+											<ul class="x-sub-menu x-sub-menu-standard x-list-style-none x-widget-area-wrapper">
+    											{% for main_category in main_categories %}
+    											<li>
+        											<a href="/toys/category/{{ main_category.id }}" class="x-menu-a-text">
+            											<span class="x-menu-text">{{ main_category.name }}</span>
+                                       </a>
+                                    </li>
+    											{% endfor %}
+											</ul>
+										</li>
+										<li id="menu-item-articles" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-articles">
+											<a href="/toys/articles">Статьи</a>
+										</li>
+										<li id="menu-item-contests" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-contests">
+											<a href="/toys/contests">Конкурсы</a>
+										</li>
+									</ul>
+								</div>
+							</aside>
+						</div>
+					</div>
+				</div>
+			</div--> 
+			
+			<header id="header-mobile" class="mobile-header header-mobile-2">
+				<div class="header-mobile-before"> 
+					<a href="http://themes.g5plus.net/handmade/" title="HandMade - Shop WordPress WooCommerce Theme"> 
+						<img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/logo.png" alt="HandMade - Shop WordPress WooCommerce Theme"> 
+					</a>
+				</div>
+				<div class="header-container-wrapper menu-drop-fly header-mobile-sticky">
+					<div class="container header-mobile-wrapper">
+						<div class="header-mobile-inner">
+							<div class="toggle-icon-wrapper toggle-mobile-menu" data-ref="nav-menu-mobile" data-drop-type="fly">
+								<div class="toggle-icon"> 
+									<span></span>
+								</div>
+							</div>
+							<div class="header-customize">
+								<div class="search-button-wrapper header-customize-item"> 
+									<a class="icon-search-menu" href="#" data-search-type="standard">
+										<i class="wicon fa fa-search"></i>
+									</a>
+								</div>
+								<div class="shopping-cart-wrapper header-customize-item no-price style-default">
+									<div class="widget_shopping_cart_content">
+										<div class="widget_shopping_cart_icon">
+											<i class="wicon fa fa-shopping-cart"></i>
+											<span class="total">0</span>
+										</div>
+										<div class="sub-total-text">
+											<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>0.00</span>
+										</div>
+									<div class="cart_list_wrapper">
+										<ul class="cart_list product_list_widget ps-container" style="max-height: 325px;" data-ps-id="eaba64d6-3535-da1e-de8c-98195c4523aa">
+											<li class="empty">
+												<h4>An empty cart</h4>
+												<p>You have no item in your shopping cart</p>
+											</li>
+
+											<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px; display: block;">
+												<div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div>
+											</div>
+											<div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px; display: block;">
+												<div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div>
+											</div>
+										</ul> <!-- end product list -->
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="nav-menu-mobile" class="header-mobile-nav menu-drop-fly">
+							<form class="search-form-menu-mobile" method="get" action="http://themes.g5plus.net/handmade"> 
+								<input name="s" placeholder="Search..." type="text"> 
+								<button type="submit"><i class="fa fa-search"></i></button>
+							</form>
+							<ul id="menu-main-menu" class="nav-menu-mobile x-nav-menu x-nav-menu_main-menu x-animate-slide-up" data-breakpoint="991">
+								<li id="menu-item-mobile-2294" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children x-menu-item x-sub-menu-standard">
+									<a href="/" class="x-menu-a-text">
+										<span class="x-menu-text">Главная</span>
+									</a>
+								</li>
+								<li id="menu-item-mobile-2295" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children x-menu-item x-sub-menu-standard">
+									<a href="#" class="x-menu-a-text">
+										<span class="x-menu-text">Игрушки</span>
+										<b class="x-caret"></b>
+									</a>
+									<ul class="x-sub-menu x-sub-menu-standard x-list-style-none x-widget-area-wrapper">
+										{% for main_category in main_categories %}
+										<li id="menu-item-mobile-2496" class="menu-item menu-item-type-post_type menu-item-object-page x-menu-item x-sub-menu-standard">
+											<a href="/toys/category/{{ main_category.id }}" class="x-menu-a-text">
+												<span class="x-menu-text">{{ main_category.name }}</span>
+											</a>
+										</li>
+										{% endfor %}
+									</ul>
+								</li>
+								<li id="menu-item-mobile-2497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children x-menu-item x-sub-menu-standard">
+									<a href="/toys/articles" class="x-menu-a-text">
+										<span class="x-menu-text">Статьи</span>
+									</a>
+								</li>
+								<li id="menu-item-mobile-2440" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children x-menu-item x-sub-menu-standard">
+									<a href="/toys/contests" class="x-menu-a-text">
+										<span class="x-menu-text">Конкурсы</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="main-menu-overlay"></div>
+					</div>
+				</div> 
+			</header> 
+			
+			<header id="header" class="main-header header-2 header-desktop-wrapper">
+				<div class="header-nav-above">
+					<div class="container">
+						<div class="fl">
+							<div class="header-customize header-customize-left">
+								<div class="custom-text-wrapper header-customize-item">
+									<ul class="custom-list" style="margin-bottom: 30px;margin-right: -15px">
+										<li style="color:#999">Follow us</li>
+										<li style="font-size: 22px">Socials</li>
+									</ul>
+								</div>
+								<ul class="header-customize-item header-social-profile-wrapper">
+									<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+									<li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="header-logo"> 
+							<a href="http://themes.g5plus.net/handmade/" title="HandMade - Shop WordPress WooCommerce Theme"> 
+								<img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/logo-02.png" alt="HandMade - Shop WordPress WooCommerce Theme"> 
+							</a>
+						</div>
+						<div class="fr">
+							<div class="header-customize header-customize-right header-customize-separate">
+								<div class="custom-text-wrapper header-customize-item">
+									<div class="contact-info"> 
+										<i class="fa fa-phone"></i> + (102) 3456 789
+									</div>
+								</div>
+								<div class="shopping-cart-wrapper header-customize-item with-price">
+									<div class="widget_shopping_cart_content">
+										<div class="widget_shopping_cart_icon">
+											<i class="wicon fa fa-shopping-cart"></i>
+											<span class="total">0</span>
+										</div>
+										<div class="sub-total-text">
+											<span class="woocommerce-Price-amount amount">
+												<span class="woocommerce-Price-currencySymbol">$</span>0.00
+											</span>
+										</div>
+										<div class="cart_list_wrapper">
+											<ul class="cart_list product_list_widget ps-container" style="max-height: 325px;" data-ps-id="165c6a2c-764b-3dc1-ca02-678943dcbbd9">
+												<li class="empty">
+													<h4>An empty cart</h4>
+													<p>You have no item in your shopping cart</p>
+												</li>
+												<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px; display: block;">
+													<div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div>
+												</div>
+												<div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px; display: block;">
+													<div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div>
+												</div>
+											</ul><!-- end product list -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 84px;">
+					<div class="header-nav-wrapper header-sticky sticky-scheme-inherit nav-hover-primary">
+						<div class="container">
+							<div class="header-wrapper">
+								<div class="header-left">
+									<div id="primary-menu" class="menu-wrapper">
+										<ul id="main-menu" class="main-menu x-nav-menu x-nav-menu_main-menu x-animate-slide-up" data-breakpoint="991">
+											<li class="logo-sticky"> 
+												<a href="http://themes.g5plus.net/handmade/" title="HandMade - Shop WordPress WooCommerce Theme"> 
+													<img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/logo-02.png" alt="HandMade - Shop WordPress WooCommerce Theme"> 
+												</a>
+											</li>
+											<li id="menu-item-2294" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children x-menu-item x-sub-menu-standard">
+												<a href="/" class="x-menu-a-text">
+													<span class="x-menu-text">Главная</span>
+												</a>
+											</li>
+											<li id="menu-item-2295" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children x-menu-item x-sub-menu-standard">
+												<a href="#" class="x-menu-a-text">
+													<span class="x-menu-text">Игрушки</span>
+													<b class="x-caret"></b>
+												</a>
+												<ul class="x-sub-menu x-sub-menu-standard x-list-style-none x-widget-area-wrapper" style="left: 104.383px; right: auto;">
+        										{% for main_category in main_categories %}
+        										<li id="menu-item-mobile-2496" class="menu-item menu-item-type-post_type menu-item-object-page x-menu-item x-sub-menu-standard">
+        											<a href="/toys/category/{{ main_category.id }}" class="x-menu-a-text">
+        												<span class="x-menu-text">{{ main_category.name }}</span>
+        											</a>
+        										</li>
+        										{% endfor %}
+												</ul>
+											</li>
+											<li id="menu-item-2497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children x-menu-item x-sub-menu-standard">
+           									<a href="/toys/articles" class="x-menu-a-text">
+           										<span class="x-menu-text">Статьи</span>
+           									</a>
+											</li>
+											<li id="menu-item-2440" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children x-menu-item x-sub-menu-standard">
+												<a href="/toys/contests" class="x-menu-a-text">
+													<span class="x-menu-text">Конкурсы</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="header-right">
+									<div class="header-customize header-customize-nav">
+										<div class="search-button-wrapper header-customize-item style-default"> 
+											<a class="icon-search-menu" href="#" data-search-type="standard">
+												<i class="wicon fa fa-search"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</header>
+			
+			<div id="search_popup_wrapper" class="dialog">
+				<div class="dialog__overlay"></div>
+				<div class="dialog__content">
+					<div class="morph-shape"> 
+						<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 520 280" preserveAspectRatio="none"> 
+							<rect x="3" y="3" fill="none" width="516" height="276"></rect> 
+						</svg>
+					</div>
+					<div class="dialog-inner">
+						<h2>Enter your keyword</h2>
+						<form method="get" action="http://themes.g5plus.net/handmade/" class="search-popup-inner"> 
+							<input name="s" placeholder="Search..." type="text"> 
+							<button type="submit">Search</button>
+						</form>
+						<div>
+							<button class="action" data-dialog-close="close" type="button">
+								<i class="fa fa-close"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="wrapper-content" class="clearfix"> 
+				<main class="site-content-page">
+					<div class="site-content-page-inner ">
+						<div class="page-content">
+							<div id="post-30" class="post-30 page type-page status-publish hentry">
+								<div class="entry-content">
+									<div class="container">
+										<div class="vc_row wpb_row vc_row-fluid vc_custom_1443867642165">
+											<div class="col-md-9 col-sm-12 sm-margin-bottom-30 wpb_column vc_column_container vc_col-sm-9">
+												<div class="vc_column-inner ">
+													<div class="wpb_wrapper">
+														<div class="handmade-banner custom   bot-left">
+															<div class="bg-img" style="height:490px; background-image: url(http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/banner-home-2.jpg);"></div>
+															<div class="overlay-banner"> 
+																<a class="link-banner" title="" target="_self" href="#">
+																	<div class="content-middle">
+																		<div class="content-middle-inner">
+																			<h2>Девиз туточки должен быть</h2> 
+																			<span class="sub-title">View more</span>
+																		</div>
+																	</div> 
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3 col-sm-12 wpb_column vc_column_container vc_col-sm-3">
+												<div class="vc_column-inner ">
+													<div class="wpb_wrapper">
+														<div data-height="490" class="sc-product-categories-home-wrap p-color-bg style-02  " style="height: 490px;">
+															<ul class="product-categories-home">
+    															{% for main_category in main_categories %}
+    															<li><a href="/toys/category/{{ main_category.id }}" title="{{ main_category.name }}">{{ main_category.name }} ({{ main_category.product_set.count }})</a></li>
+    															{% endfor %}
+															</ul> 
+															<a class="show-more"><i class="fa fa-angle-down"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="container">
+										<div class="vc_row wpb_row vc_row-fluid margin-bottom-50">
+											<div class="col-md-4 col-sm-12 sm-margin-bottom-30 wpb_column vc_column_container vc_col-sm-4">
+												<div class="vc_column-inner ">
+													<div class="wpb_wrapper">
+														<div style="border-color: #eeeeee;" class="handmade-banner style1   content-center">
+															<div class="bg-img" style="height:270px; background-image: url(http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/banner-1.jpg);"></div>
+															<div class="overlay-banner"> 
+																<a class="link-banner" title="" target="_self" href="#">
+																	<div class="content-middle">
+																		<div class="content-middle-inner">
+																			<h2>What items do your favorite brands and bloggers love?</h2> 
+																			<span class="sub-title">Browse Favorite</span>
+																		</div>
+																	</div> 
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4 col-sm-12 sm-margin-bottom-30 wpb_column vc_column_container vc_col-sm-4">
+												<div class="vc_column-inner ">
+													<div class="wpb_wrapper">
+														<div class="handmade-banner style3  margin-bottom-50 top">
+															<div class="bg-img" style="height:270px; background-image: url(http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/banner-6-new.jpg);">
+															</div>
+															<div class="overlay-banner"> <a class="link-banner" title="" target="_self" href="#">
+																	<div class="content-middle">
+																		<div class="content-middle-inner"><h2>handmade soaps class</h2> <span class="sub-title">23 Sept</span>
+																		</div>
+																	</div> </a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4 col-sm-12 wpb_column vc_column_container vc_col-sm-4">
+												<div class="vc_column-inner ">
+													<div class="wpb_wrapper">
+														<div class="handmade-banner style1  margin-bottom-50 content-left">
+															<div class="bg-img" style="height:270px; background-image: url(http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/banner-7.jpg);">
+															</div>
+															<div class="overlay-banner"> <a class="link-banner" title="" target="_self" href="#">
+																	<div class="content-middle">
+																		<div class="content-middle-inner"><h2>Happy Mother’s day Giftcards</h2> <span class="sub-title">Browse favorite</span>
+																		</div>
+																	</div> </a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="container">
+										<div class="vc_row wpb_row vc_row-fluid vc_custom_1443857836785">
+											<div class="wpb_column vc_column_container vc_col-sm-12">
+												<div class="vc_column-inner ">
+													<div class="wpb_wrapper">
+														<div class="handmade-banner style2   right">
+															<div class="overflow-hidden">
+																<div class="bg-img" style="height:269px; background-image: url(http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/banner-home-21.jpg);"></div>
+															</div>
+															<div class="overlay-banner"> <a class="link-banner" title="" target="_self" href="#">
+																	<div class="content-middle">
+																		<div class="content-middle-inner"><h2>Shop Featured Collection</h2><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit .</p></div>
+																	</div> </a></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="container">
+										<div class="vc_row wpb_row vc_row-fluid">
+											<div class="wpb_column vc_column_container vc_col-sm-12">
+												<div class="vc_column-inner ">
+													<div class="wpb_wrapper">
+														<div id="new-products" data-columns="3" class="woocommerce sc-product-wrap   product-creative">
+   														{% get_last_products as last_products %}
+    														<h3 class="sc-title s-font"><span>Новые игрушки</span></h3>
+    														
+    														{% if last_products|length > 6 %}
+        														<a href="javascript:;" class="iso-filter " data-section-id="new-products" data-page="1" data-total-product="{{ last_products|length }}" data-total-pages="{{ last_products|length|intdiv:6 }}" data-navigation="prev"><span class="prev"><i class="fa fa-angle-left"></i></span></a> 
+        														<a href="javascript:;" class="iso-filter " data-section-id="new-products" data-page="1" data-total-product="{{ last_products|length }}" data-total-pages="{{ last_products|length|intdiv:6 }}" data-navigation="next"><span class="next"><i class="fa fa-angle-right"></i></span></a>
+    														{% endif %}
+    														
+															<div class="product-listing woocommerce clearfix" style="position: relative; height: 1004.5px;">
+    															{% for last_product in last_products %}
+        															{% if forloop.counter == 1 or forloop.counter == 7 %}
+        																<div class="product-item-wrap rating-visible col-md-6 col-sm-6 col-xs-6  post-2239 product type-product status-publish has-post-thumbnail product_cat-birthday-gifts first instock sale shipping-taxable product-type-grouped page-1" style="position: absolute; left: 0%; top: 0px;">
+        																	<div class="product-item-inner double-size">
+        															{% elif forloop.counter == 6 or forloop.counter == 12 %}
+        																<div class="product-item-wrap rating-visible col-md-6 col-sm-6 col-xs-6  post-2239 product type-product status-publish has-post-thumbnail product_cat-birthday-gifts last instock sale shipping-taxable product-type-grouped page-1" style="position: absolute; left: 0%; top: 0px;">
+        																	<div class="product-item-inner double-size">
+        															{% else %}
+        																<div class="product-item-wrap rating-visible col-md-3 col-sm-6 col-xs-6  post-1569 product type-product status-publish has-post-thumbnail product_cat-birthday-gifts product_cat-every-day product_cat-personal product_tag-birthday product_tag-every-day product_tag-person product_tag-women instock shipping-taxable purchasable product-type-simple page-1" style="position: absolute; left: 50%; top: 0px;">
+        																	<div class="product-item-inner ">
+        															{% endif %}
+        																		<div class="product-thumb">
+        																			<div class="product-flash-wrap"></div>
+        																			<div class="product-thumb-primary"> 
+            																		{% if last_product.productimage_set.all %}
+                																		{% with img=last_product.productimage_set.first %}
+                       																	<img class="attachment-shop_catalog wp-post-image" alt="{{ last_product.name }}" src="{{ mediaPath }}{{ img.photo }}" width="570" height="570">
+                   																	{% endwith %}
+            																		{% else %}
+            																			<img class="attachment-shop_catalog wp-post-image" alt="{{ last_product.name }}" src="{% static 'img/product_empty.jpg' %}" width="570" height="570">
+            																		{% endif %}
+        																			</div> 
+        																			<a class="product-link" href="/toys/product/{{ last_product.id }}"></a>
+        																			<div class="product-actions"> 
+            																		<a data-toggle="tooltip" data-placement="top" title="" href="http://themes.g5plus.net/handmade/product/birthday-gifts-products/?action=yith-woocompare-add-product&amp;id=2239" class="compare" data-product_id="2239" data-original-title="Compare"><i class="fa fa-exchange"></i> </a>
+        																				<div class="yith-wcwl-add-to-wishlist add-to-wishlist-2239">
+        																					<div class="yith-wcwl-add-button show" style="display:block" data-original-title="" title=""> <a href="/handmade/home-02/?add_to_wishlist=2239" rel="nofollow" data-product-id="2239" data-product-type="grouped" class="add_to_wishlist"> Add to Wishlist</a> <img src="http://themes.g5plus.net/handmade/wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif" class="ajax-loading" alt="loading" style="visibility:hidden" width="16" height="16"></div>
+        																					<div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;" data-original-title="" title=""> <span class="feedback">Product added!</span> <a href="http://themes.g5plus.net/handmade/wishlist/" rel="nofollow"> Browse Wishlist </a></div>
+        																					<div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none" data-original-title="" title=""> <span class="feedback">The product is already in the wishlist!</span> <a href="http://themes.g5plus.net/handmade/wishlist/" rel="nofollow"> Browse Wishlist </a></div>
+        																					<div style="clear:both"></div>
+        																					<div class="yith-wcwl-wishlistaddresponse"></div>
+        																				</div>
+        																				<div class="clear"></div>
+        																				<a data-toggle="tooltip" data-placement="top" title="" class="product-quick-view" data-product_id="2239" href="http://themes.g5plus.net/handmade/product/birthday-gifts-products/" data-original-title="Quick view"><i class="fa fa-search"></i></a>
+        																				<div class="add-to-cart-wrap" data-toggle="tooltip" data-placement="top" title="" data-original-title="View products"><a rel="nofollow" href="http://themes.g5plus.net/handmade/product/birthday-gifts-products/" data-quantity="1" data-product_id="2239" data-product_sku="" class="button product_type_grouped btn_add_to_cart"><i class="fa fa-shopping-cart"></i> View products</a></div>
+        																			</div>
+        																		</div>
+        																		<div class="product-info">
+            																	<h3 class="product-name p-font">
+                																	<a href="/toys/product/{{ last_product.id }}">
+                    																	{{ last_product.name }}
+                    																</a>
+                																</h3>
+                																<span class="price">
+                    																<span class="woocommerce-Price-amount amount">
+                        																<span class="woocommerce-Price-currencySymbol"><i class="fa fa-rub"></i></span> {{ last_product.price }}
+                        														</span>
+                        													</span>
+                        												</div>
+        																	</div>
+        																</div>
+    															{% endfor %}
+    															
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="container">
+										<div class="vc_row wpb_row vc_row-fluid margin-bottom-80 vc_custom_1444636519242">
+											<div class="col-md-3 col-sm-6 sm-margin-bottom-30 wpb_column vc_column_container vc_col-sm-3">
+												<div class="vc_column-inner ">
+													<div class="wpb_wrapper">
+														<div class="handmade-banner custom-button  ">
+															<div class="bg-img" style="height:269px; background-image: url(http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/banner-11.jpg);"></div>
+															<div class="overlay-banner"> <a class="link-banner" title="Giftcards" target="_self" href="#">
+																	<div class="content-middle">
+																		<div class="content-middle-inner"> <span class="handmade-button style1 button-1x"> Giftcards <i class="pe-7s-right-arrow"></i> </span></div>
+																	</div> </a></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3 col-sm-6 sm-margin-bottom-30 wpb_column vc_column_container vc_col-sm-3">
+												<div class="vc_column-inner ">
+													<div class="wpb_wrapper">
+														<div class="handmade-banner custom-button  ">
+															<div class="bg-img" style="height:269px; background-image: url(http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/banner-2.jpg);"></div>
+															<div class="overlay-banner"> <a class="link-banner" title="Kinitting" target="_self" href="#">
+																	<div class="content-middle">
+																		<div class="content-middle-inner"> <span class="handmade-button style1 button-1x"> Kinitting <i class="pe-7s-right-arrow"></i> </span></div>
+																	</div> </a></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3 col-sm-6 sm-margin-bottom-30 wpb_column vc_column_container vc_col-sm-3">
+												<div class="vc_column-inner ">
+													<div class="wpb_wrapper">
+														<div class="handmade-banner custom-button  ">
+															<div class="bg-img" style="height:269px; background-image: url(http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/banner-3.jpg);"></div>
+															<div class="overlay-banner"> <a class="link-banner" title="Accessories" target="_self" href="#">
+																	<div class="content-middle">
+																		<div class="content-middle-inner"> <span class="handmade-button style1 button-1x"> Accessories <i class="pe-7s-right-arrow"></i> </span></div>
+																	</div> </a></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3 col-sm-6 sm-margin-bottom-30 wpb_column vc_column_container vc_col-sm-3">
+												<div class="vc_column-inner ">
+													<div class="wpb_wrapper">
+														<div class="handmade-banner custom-button  ">
+															<div class="bg-img" style="height:269px; background-image: url(http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/banner-4.jpg);"></div>
+															<div class="overlay-banner"> <a class="link-banner" title="Handmade soaps" target="_self" href="#">
+																	<div class="content-middle">
+																		<div class="content-middle-inner"> <span class="handmade-button style1 button-1x"> Handmade soaps <i class="pe-7s-right-arrow"></i> </span></div>
+																	</div> </a></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+									<div class="container">
+										<div class="vc_row wpb_row vc_row-fluid margin-bottom-80">
+											<div class="wpb_column vc_column_container vc_col-sm-12">
+												<div class="vc_column-inner ">
+													<div class="wpb_wrapper">
+														<div class="handmade-testimonial border-p-color style1 dark ">
+															<div data-plugin-options="{&quot;singleItem&quot;:true,&quot;transitionStyle&quot;:&quot;fade&quot;,&quot;pagination&quot;:true,&quot;navigation&quot;:false,&quot;stopOnHover&quot;:false,&quot;autoHeight&quot;:false,&quot;autoPlay&quot;:5000,&quot;slideSpeed&quot;:200,&quot;paginationSpeed&quot;:800,&quot;rewindSpeed&quot;:1000}" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
+																<div class="owl-wrapper-outer">
+																	<div class="owl-wrapper" style="width: 6996px; left: 0px; display: block; transition: all 0ms ease 0s; transform: translate3d(0px, 0px, 0px); transform-origin: 583px center 0px; perspective-origin: 583px center;">
+																		<div class="owl-item" style="width: 1166px;">
+																			<div class="testimonial-item">
+																				<div class="testimonial-avatar"> <img class="" src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/our-team-1-123x123.jpg" alt="our-team-1" title="our-team-1" width="123" height="123"></div>
+																				<div class="testimonial-info"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore et dolore magna aliqua.”</p><h3 class="p-color">David Miller</h3> <span class="s-color">Graphic Designer</span></div>
+																			</div>
+																		</div>
+																		<div class="owl-item" style="width: 1166px;">
+																			<div class="testimonial-item">
+																				<div class="testimonial-avatar"> <img class="" src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/our-team-4-123x123.jpg" alt="our-team-4" title="our-team-4" width="123" height="123"></div>
+																				<div class="testimonial-info"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore et dolore magna aliqua.”</p><h3 class="p-color">Taylor Amar</h3> <span class="s-color">Stylist</span></div>
+																			</div>
+																		</div>
+																		<div class="owl-item" style="width: 1166px;">
+																			<div class="testimonial-item">
+																				<div class="testimonial-avatar"> <img class="" src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/our-team-3-123x123.jpg" alt="our-team-3" title="our-team-3" width="123" height="123"></div>
+																				<div class="testimonial-info"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore et dolore magna aliqua.”</p><h3 class="p-color">David James</h3> <span class="s-color">Stylist</span></div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="owl-controls clickable">
+																	<div class="owl-pagination">
+																		<div class="owl-page active"><span class=""></span></div>
+																		<div class="owl-page"><span class=""></span></div>
+																		<div class="owl-page"><span class=""></span></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="container">
+										<div class="vc_row wpb_row vc_row-fluid margin-bottom-70">
+											<div class="wpb_column vc_column_container vc_col-sm-12">
+												<div class="vc_column-inner ">
+													<div class="wpb_wrapper">
+														<div class="handmade-post "><h2>From our blog</h2>
+															<div class="handmade-line"></div>
+															<div class="row">
+																<div data-plugin-options="{&quot;autoPlay&quot;: true, &quot;items&quot;:3,&quot;itemsDesktop&quot;:[1199, 3],&quot;itemsDesktopSmall&quot;:[980, 3],&quot;itemsTablet&quot;:[768, 1], &quot;pagination&quot;:false, &quot;navigation&quot;:true}" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
+																	<div class="owl-wrapper-outer">
+																		<div class="owl-wrapper" style="width: 4800px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(-1200px, 0px, 0px);">
+																			<div class="owl-item" style="width: 400px;">
+																				<div class="handmade-post-item">
+																					<div class="handmade-post-image">
+																						<div class="embed-responsive embed-responsive-16by9 embed-responsive-blog-related"><iframe src="https://www.youtube.com/embed/mcixldqDIEQ?feature=oembed" data-dm-button-id="download-master-button-738486035" width="500" height="281" frameborder="0"></iframe>
+																							<div class="download-master-mm-button" title=" Скачать видео Home 02 – HandMade" id="download-master-button-738486035" style="visibility: visible; top: 0px; left: 0px;">
+																								<div class="download-master-button-content"><img src="moz-extension://ec6d9092-5006-4e0b-86a5-714f3691277f/ui/assets/img/download-mm.png"><span> Скачать видео</span><img class="download-master-settings" src="moz-extension://ec6d9092-5006-4e0b-86a5-714f3691277f/ui/assets/img/download-mm-settings.png"><img class="download-master-close" src="moz-extension://ec6d9092-5006-4e0b-86a5-714f3691277f/ui/assets/img/download-mm-close.png"></div>
+																							</div>
+																						</div>
+																						<div class="handmade-post-image-overlay"> <a class="handmade-post-readmore" href="http://themes.g5plus.net/handmade/video-post/" title="Video Post">READ MORE </a></div>
+																					</div>
+																					<div class="handmade-post-content"><h3><a href="http://themes.g5plus.net/handmade/video-post/" rel="bookmark" title="Video Post">Video Post</a></h3>
+																						<div class="post-entry-meta p-color"> <span class="handmade-post-date">April 9, 2016</span> | <span class="handmade-post-author"><a href="http://themes.g5plus.net/handmade/author/admin/">admin</a></span></div>
+																						<p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented with the actual ...</p></div>
+																				</div>
+																			</div>
+																			<div class="owl-item" style="width: 400px;">
+																				<div class="handmade-post-item">
+																					<div class="handmade-post-image">
+																						<div class="entry-thumbnail"> <a href="http://themes.g5plus.net/handmade/i-love-my-life-very-much/" title="I Love My Life Very Much" class="entry-thumbnail_overlay"> <img class="img-responsive" src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/08/news-01-380x235.jpg" alt="I Love My Life Very Much" width="380" height="235"> </a> <a data-rel="prettyPhoto" href="http://themes.g5plus.net/handmade/wp-content/uploads/2015/08/news-01.jpg" class="prettyPhoto"><i class="fa fa-expand"></i></a></div>
+																						<div class="handmade-post-image-overlay"> <a class="handmade-post-readmore" href="http://themes.g5plus.net/handmade/i-love-my-life-very-much/" title="I Love My Life Very Much">READ MORE </a></div>
+																					</div>
+																					<div class="handmade-post-content"><h3><a href="http://themes.g5plus.net/handmade/i-love-my-life-very-much/" rel="bookmark" title="I Love My Life Very Much">I Love My Life Very Much</a></h3>
+																						<div class="post-entry-meta p-color"> <span class="handmade-post-date">August 2, 2015</span> | <span class="handmade-post-author"><a href="http://themes.g5plus.net/handmade/author/admin/">admin</a></span></div>
+																						<p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented with the actual ...</p></div>
+																				</div>
+																			</div>
+																			<div class="owl-item" style="width: 400px;">
+																				<div class="handmade-post-item">
+																					<div class="handmade-post-image">
+																						<div class="entry-thumbnail"> <a href="http://themes.g5plus.net/handmade/here-are-many-variations-of-passages/" title="Here Are Many Variations Of Passages" class="entry-thumbnail_overlay"> <img class="img-responsive" src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/08/news-02-380x235.jpg" alt="Here Are Many Variations Of Passages" width="380" height="235"> </a> <a data-rel="prettyPhoto" href="http://themes.g5plus.net/handmade/wp-content/uploads/2015/08/news-02.jpg" class="prettyPhoto"><i class="fa fa-expand"></i></a></div>
+																						<div class="handmade-post-image-overlay"> <a class="handmade-post-readmore" href="http://themes.g5plus.net/handmade/here-are-many-variations-of-passages/" title="Here Are Many Variations Of Passages">READ MORE </a></div>
+																					</div>
+																					<div class="handmade-post-content"><h3><a href="http://themes.g5plus.net/handmade/here-are-many-variations-of-passages/" rel="bookmark" title="Here Are Many Variations Of Passages">Here Are Many Variations Of Passages</a></h3>
+																						<div class="post-entry-meta p-color"> <span class="handmade-post-date">August 2, 2015</span> | <span class="handmade-post-author"><a href="http://themes.g5plus.net/handmade/author/admin/">admin</a></span></div>
+																						<p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented with the actual ...</p></div>
+																				</div>
+																			</div>
+																			<div class="owl-item" style="width: 400px;">
+																				<div class="handmade-post-item">
+																					<div class="handmade-post-image">
+																						<div class="entry-thumbnail"> <a href="http://themes.g5plus.net/handmade/inteligent-transitions-in-ux-design/" title="Inteligent Transitions In Ux Design" class="entry-thumbnail_overlay"> <img class="img-responsive" src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/08/news-03-380x235.jpg" alt="Inteligent Transitions In Ux Design" width="380" height="235"> </a> <a data-rel="prettyPhoto" href="http://themes.g5plus.net/handmade/wp-content/uploads/2015/08/news-03.jpg" class="prettyPhoto"><i class="fa fa-expand"></i></a></div>
+																						<div class="handmade-post-image-overlay"> <a class="handmade-post-readmore" href="http://themes.g5plus.net/handmade/inteligent-transitions-in-ux-design/" title="Inteligent Transitions In Ux Design">READ MORE </a></div>
+																					</div>
+																					<div class="handmade-post-content"><h3><a href="http://themes.g5plus.net/handmade/inteligent-transitions-in-ux-design/" rel="bookmark" title="Inteligent Transitions In Ux Design">Inteligent Transitions In Ux Design</a></h3>
+																						<div class="post-entry-meta p-color"> <span class="handmade-post-date">August 2, 2015</span> | <span class="handmade-post-author"><a href="http://themes.g5plus.net/handmade/author/admin/">admin</a></span></div>
+																						<p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented with the actual ...</p></div>
+																				</div>
+																			</div>
+																			<div class="owl-item" style="width: 400px;">
+																				<div class="handmade-post-item">
+																					<div class="handmade-post-image">
+																						<div class="entry-thumbnail"> <a href="http://themes.g5plus.net/handmade/standard-post-example/" title="Standard Post Example" class="entry-thumbnail_overlay"> <img class="img-responsive" src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/07/news-04-380x235.jpg" alt="Standard Post Example" width="380" height="235"> </a> <a data-rel="prettyPhoto" href="http://themes.g5plus.net/handmade/wp-content/uploads/2015/07/news-04.jpg" class="prettyPhoto"><i class="fa fa-expand"></i></a></div>
+																						<div class="handmade-post-image-overlay"> <a class="handmade-post-readmore" href="http://themes.g5plus.net/handmade/standard-post-example/" title="Standard Post Example">READ MORE </a></div>
+																					</div>
+																					<div class="handmade-post-content"><h3><a href="http://themes.g5plus.net/handmade/standard-post-example/" rel="bookmark" title="Standard Post Example">Standard Post Example</a></h3>
+																						<div class="post-entry-meta p-color"> <span class="handmade-post-date">July 14, 2015</span> | <span class="handmade-post-author"><a href="http://themes.g5plus.net/handmade/author/admin/">admin</a></span></div>
+																						<p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented with the actual ...</p></div>
+																				</div>
+																			</div>
+																			<div class="owl-item" style="width: 400px;">
+																				<div class="handmade-post-item">
+																					<div class="handmade-post-image">
+																						<div class="entry-thumbnail"> <a href="http://themes.g5plus.net/handmade/image-post-example/" title="Image Post Example" class="entry-thumbnail_overlay"> <img class="img-responsive" src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/06/news-05-380x235.jpg" alt="Image Post Example" width="380" height="235"> </a> <a data-rel="prettyPhoto" href="http://themes.g5plus.net/handmade/wp-content/uploads/2015/06/news-05.jpg" class="prettyPhoto"><i class="fa fa-expand"></i></a></div>
+																						<div class="handmade-post-image-overlay"> <a class="handmade-post-readmore" href="http://themes.g5plus.net/handmade/image-post-example/" title="Image Post Example">READ MORE </a></div>
+																					</div>
+																					<div class="handmade-post-content"><h3><a href="http://themes.g5plus.net/handmade/image-post-example/" rel="bookmark" title="Image Post Example">Image Post Example</a></h3>
+																						<div class="post-entry-meta p-color"> <span class="handmade-post-date">June 1, 2015</span> | <span class="handmade-post-author"><a href="http://themes.g5plus.net/handmade/author/admin/">admin</a></span></div>
+																						<p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented with the actual ...</p></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="owl-controls clickable">
+																		<div class="owl-buttons">
+																			<div class="owl-prev"><i class="fa fa-angle-left"></i></div>
+																			<div class="owl-next"><i class="fa fa-angle-right"></i></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="fullwidth">
+										<div class="vc_row wpb_row vc_row-fluid">
+											<div class="wpb_column vc_column_container vc_col-sm-12">
+												<div class="vc_column-inner ">
+													<div class="wpb_wrapper">
+														<div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_pos_align_center vc_separator_no_text"><span class="vc_sep_holder vc_sep_holder_l"><span style="border-color:#eeeeee;" class="vc_sep_line"></span></span><span class="vc_sep_holder vc_sep_holder_r"><span style="border-color:#eeeeee;" class="vc_sep_line"></span></span></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> 
+				</main>
+			</div>
+			
+			<footer class="main-footer-wrapper light">
+				<div id="wrapper-footer">
+					<div class="main-footer">
+						<div class="footer_inner clearfix">
+							<div class="footer-top-bar-wrapper">
+								<div class="footer-top-bar-inner">
+									<div class="full">
+										<div class=" sidebar"> <aside id="handmade-partner-carousel-4" class="widget widget-partner-carousel">
+												<div class="container">
+													<div class="partner-wrap col-md-12  owl-carousel  owl-theme" data-plugin-options="{ &quot;items&quot; : 5,&quot;pagination&quot;: false, &quot;navigation&quot;: false, &quot;autoPlay&quot;: true}" style="opacity: 1; display: block;">
+														<div class="owl-wrapper-outer">
+															<div class="owl-wrapper" style="width: 2736px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(-228px, 0px, 0px);">
+																<div class="owl-item" style="width: 228px;">
+																	<div class="partner content-middle-inner"> <a href="#" title="Vintage Old"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/partner-1.jpg" alt="Vintage Old"> </a></div>
+																</div>
+																<div class="owl-item" style="width: 228px;">
+																	<div class="partner content-middle-inner"> <a href="#" title="Vintage"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/partner-2.jpg" alt="Vintage"> </a></div>
+																</div>
+																<div class="owl-item" style="width: 228px;">
+																	<div class="partner content-middle-inner"> <a href="#" title="Vintage Interior"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/partner-3.jpg" alt="Vintage Interior"> </a></div>
+																</div>
+																<div class="owl-item" style="width: 228px;">
+																	<div class="partner content-middle-inner"> <a href="#" title="Vintage Design"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/partner-4.jpg" alt="Vintage Design"> </a></div>
+																</div>
+																<div class="owl-item" style="width: 228px;">
+																	<div class="partner content-middle-inner"> <a href="#" title="Vintage"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/partner-5.jpg" alt="Vintage"> </a></div>
+																</div>
+																<div class="owl-item" style="width: 228px;">
+																	<div class="partner content-middle-inner"> <a href="#" title="Vintage"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/partner-2.jpg" alt="Vintage"> </a></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div> </aside><aside id="handmade-map-scroll-up-3" class="widget widget-map-scroll-up">
+												<div class="map-scroll-up">
+													<div class="link-wrap">
+														<div class="map col-md-6 col-sm-6 col-xs-6"> <a href="javascript:;" class="a-map p-color-hover"> <i class="pe-7s-map-marker pe-lg pe-va"></i> <span>See map</span> </a></div>
+														<div class="scroll-up col-md-6 col-sm-6 col-xs-6"> <a href="javascript:;" class="a-scroll-up p-color-hover"> <i class="pe-7s-up-arrow"></i> <span>Scroll up</span> </a></div>
+													</div>
+													<div class="handmade-map container" style="display: none;">
+														<div class="row">
+															<div class="col-md-12">
+																<div class="handmade-google-map " data-location-x="40.6700" data-location-y="-73.9400" data-marker-title="Google map" style="height: 450px; position: relative; overflow: hidden;" data-map-zoom="12" data-map-style="none">
+																	<div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+																		<div style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;" class="gm-style">
+																			<div style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;" tabindex="0">
+																				<div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);">
+																					<div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;">
+																						<div style="position: absolute; left: 0px; top: 0px; z-index: 0;">
+																							<div style="position: absolute; z-index: 988; transform: matrix(1, 0, 0, 1, -186, -169);">
+																								<div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;">
+																									<div style="width: 256px; height: 256px;"></div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div>
+																					<div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div>
+																					<div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;">
+																						<div style="position: absolute; left: 0px; top: 0px; z-index: -1;">
+																							<div style="position: absolute; z-index: 988; transform: matrix(1, 0, 0, 1, -186, -169);">
+																								<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div>
+																							</div>
+																						</div>
+																						<div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false"></div>
+																					</div>
+																					<div style="position: absolute; left: 0px; top: 0px; z-index: 0;">
+																						<div style="position: absolute; z-index: 988; transform: matrix(1, 0, 0, 1, -186, -169);"></div>
+																					</div>
+																				</div>
+																				<div style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;" class="gm-style-pbc"><p class="gm-style-pbt"></p></div>
+																				<div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;">
+																					<div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);">
+																						<div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div>
+																						<div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div>
+																						<div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;">
+																							<div style="width: 27px; height: 43px; overflow: hidden; position: absolute; opacity: 0; left: -14px; top: -43px; z-index: 0;"><img style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" usemap="#gmimap0"><map name="gmimap0" id="gmimap0"><area log="miw" coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75" shape="poly" title="Google map" style="cursor: pointer; touch-action: none;"></map></div>
+																						</div>
+																						<div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div>
+																					</div>
+																				</div>
+																			</div><iframe aria-hidden="true" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: medium none;" src="about:blank" frameborder="0"></iframe></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div> </aside></div>
+									</div>
+								</div>
+							</div>
+							<div class="footer_top_holder col-4">
+								<div class="container">
+									<div class="row footer-top-col-4 footer-1">
+										<div class="sidebar footer-sidebar col-md-3 col-sm-6 col-1"><aside id="wolverine-footer-logo-2" class="widget widget-footer-logo">
+												<div class="footer-logo"> <a href="http://themes.g5plus.net/handmade"><img class="footer-logo-img" src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/logo.png" alt="Handmade"></a>
+													<div class="sub-description"> Letterpress, gold foil stamping, and more. Quality, sustainable materials like thick 100% PCW paper and veg-based inks.</div>
+												</div> </aside></div>
+										<div class="sidebar footer-sidebar col-md-3 col-sm-6 col-2"><aside id="nav_menu-3" class="widget widget_nav_menu"><h4 class="widget-title"><span>Information</span></h4>
+												<div class="menu-footer-information-container"><ul id="menu-footer-information" class="menu"><li id="menu-item-2430" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2430"><a href="#">About Us</a></li><li id="menu-item-2431" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2431"><a href="#">Delivery Information</a></li><li id="menu-item-2432" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2432"><a href="#">Privacy policy</a></li><li id="menu-item-2433" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2433"><a href="#">Terms &amp; Conditions</a></li><li id="menu-item-2434" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2434"><a href="#">Contact Us</a></li></ul></div>
+											</aside></div>
+										<div class="sidebar footer-sidebar col-md-3 col-sm-6 col-3"><aside id="nav_menu-4" class="widget widget_nav_menu"><h4 class="widget-title"><span>Extras</span></h4>
+												<div class="menu-footer-extras-container"><ul id="menu-footer-extras" class="menu"><li id="menu-item-2435" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2435"><a href="#">Brands</a></li><li id="menu-item-2436" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2436"><a href="#">Gift Vouchers</a></li><li id="menu-item-2437" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2437"><a href="#">Affiliates</a></li><li id="menu-item-2438" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2438"><a href="#">Specials</a></li><li id="menu-item-2439" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2439"><a href="#">Site Map</a></li></ul></div>
+											</aside></div>
+										<div class="sidebar footer-sidebar col-md-3 col-sm-6 col-4"><aside id="text-2" class="widget-title-s-font widget widget_text"><h4 class="widget-title"><span>Contact us</span></h4>
+												<div class="textwidget"><ul class="footer-contact-us"><li> <i class="fa fa-map-marker p-color"></i> <span> Great Store London Oxford Street, 012 United Kingdom. </span></li><li> <i class="fa fa-envelope p-color"></i> <span> emailgreatstore@gmail.com </span></li><li> <i class="fa fa-phone p-color"></i> <span> (+92) 3456 7890 </span></li></ul></div> </aside></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bottom-bar-wrapper">
+						<div class="bottom-bar-inner">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-6 sidebar text-left"> 
+    									<aside id="text-3" class="copyright margin-top-10 widget widget_text">
+											<div class="textwidget">
+												<div>© Copyright 2018. Керимов Сергей.</div>
+												<div>Работает на Django</div>
+											</div> 
+										</aside>
+									</div>
+									<!--div class="col-md-6 sidebar text-right"> <aside id="handmade-payment-gate-2" class="widget widget-payment-gate"><ul class="payment-gate"><li> <a target="_blank" href="http://www.mastercard.com" title="Master card"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/master_card.jpg" alt="Master card"> </a></li><li> <a target="_blank" href="http://www.visa.com" title="Visa"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/visa.jpg" alt="Visa"> </a></li><li> <a target="_blank" href="http://www.paypal.com" title="Paypal"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/paypal.jpg" alt="Paypal"> </a></li><li> <a target="_blank" href="https://www.americanexpress.com/" title="American Express"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/american_express.jpg" alt="American Express"> </a></li><li> <a target="_blank" href="https://www.westernunion.com" title="Weston Union"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/weston_union.jpg" alt="Weston Union"> </a></li></ul> </aside></div-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</footer>
+		</div>
+		<a class="back-to-top" href="javascript:;"> <i class="fa fa-angle-up"></i> </a> 
+
+		<script type="text/javascript">
+			var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+			(function () {
+				var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+				s1.async = true;
+				s1.src = 'https://embed.tawk.to/58d49c44f97dd14875f59da4/default';
+				s1.charset = 'UTF-8';
+				s1.setAttribute('crossorigin', '*');
+				s0.parentNode.insertBefore(s1, s0);
+			})();
+		</script>
+		
+		<script type="text/javascript">
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+			/*  */
+			var _wpcf7 = {"recaptcha": {"messages": {"empty": "Please verify that you are not a robot."}}, "cached": "1"};
+			/*  */
+			/*  */
+			var woocommerce_params = {"ajax_url": "\/handmade\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/handmade\/?wc-ajax=%%endpoint%%"};
+			/*  */
+			/*  */
+			var wc_cart_fragments_params = {"ajax_url": "\/handmade\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/handmade\/?wc-ajax=%%endpoint%%", "cart_hash_key": "wc_cart_hash_c44dd2ca6b3e914a8f1e1721af859412", "fragment_name": "wc_fragments_c44dd2ca6b3e914a8f1e1721af859412"};
+			/*  */
+			/*  */
+			var yith_woocompare = {"ajaxurl": "\/handmade\/?wc-ajax=%%endpoint%%", "actionadd": "yith-woocompare-add-product", "actionremove": "yith-woocompare-remove-product", "actionview": "yith-woocompare-view-table", "actionreload": "yith-woocompare-reload-product", "added_label": "Added", "table_title": "Product Comparison", "auto_open": "yes", "loader": "http:\/\/themes.g5plus.net\/handmade\/wp-content\/plugins\/yith-woocommerce-compare\/assets\/images\/loader.gif", "button_text": "Compare", "cookie_name": "yith_woocompare_list"};
+			/*  */
+			/*  */
+			var yith_wcwl_l10n = {"ajax_url": "\/handmade\/wp-admin\/admin-ajax.php", "redirect_to_cart": "no", "multi_wishlist": "", "hide_add_button": "1", "is_user_logged_in": "", "ajax_loader_url": "http:\/\/themes.g5plus.net\/handmade\/wp-content\/plugins\/yith-woocommerce-wishlist\/assets\/images\/ajax-loader.gif", "remove_from_wishlist_after_add_to_cart": "yes", "labels": {"cookie_disabled": "We are sorry, but this feature is available only if cookies are enabled on your browser.", "added_to_cart_message": "<div class=\"woocommerce-message\">Product correctly added to cart<\/div>"}, "actions": {"add_to_wishlist_action": "add_to_wishlist", "remove_from_wishlist_action": "remove_from_wishlist", "move_to_another_wishlist_action": "move_to_another_wishlsit", "reload_wishlist_and_adding_elem_action": "reload_wishlist_and_adding_elem"}};
+			/*  */
+			/*  */
+			var g5plus_framework_constant = {"product_compare": "Compare", "product_wishList": "WishList"};
+			var g5plus_framework_ajax_url = "http:\/\/themes.g5plus.net\/handmade\/wp-admin\/admin-ajax.php?activate-multi=true";
+			var g5plus_framework_theme_url = "http:\/\/themes.g5plus.net\/handmade\/wp-content\/themes\/handmade\/";
+			var g5plus_framework_site_url = "http:\/\/themes.g5plus.net\/handmade";
+			/*  */
+			/*  */
+			var xmenu_meta = {"setting-responsive-breakpoint": "991"};
+			var xmenu_meta_custom = [];
+			/*  */
+		</script>
+		
+		<script>
+			jQuery("style#g5plus_custom_style").append("@media screen and (min-width: 992px) {#menu-item-mobile-2475 > ul.x-sub-menu{background-image:url('http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/bg-mega-menu.png');background-attachment:scroll;background-position:bottom right;background-repeat:no-repeat;background-size:auto;}}");
+			jQuery("style#g5plus_custom_style").append("@media screen and (min-width: 992px) {#menu-item-2475 > ul.x-sub-menu{background-image:url('http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/bg-mega-menu.png');background-attachment:scroll;background-position:bottom right;background-repeat:no-repeat;background-size:auto;}}");
+		</script>
+		
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&amp;language=en_US&amp;key=AIzaSyDsUcTjt43mTheN9ruCsQVgBE-wgN6_AfY&amp;ver=4.7.11"></script>
+		<script src="js/jquery_plugins.js" data-minify="1"></script>
+		
+		<div id="cboxOverlay" style="display: none;"></div>
+		<div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
+			<div id="cboxWrapper">
+				<div>
+					<div id="cboxTopLeft" style="float: left;"></div>
+					<div id="cboxTopCenter" style="float: left;"></div>
+					<div id="cboxTopRight" style="float: left;"></div>
+				</div>
+				<div style="clear: left;">
+					<div id="cboxMiddleLeft" style="float: left;"></div>
+					<div id="cboxContent" style="float: left;">
+						<div id="cboxTitle" style="float: left;"></div>
+						<div id="cboxCurrent" style="float: left;"></div>
+						<button type="button" id="cboxPrevious"></button>
+						<button type="button" id="cboxNext"></button>
+						<button id="cboxSlideshow"></button>
+						<div id="cboxLoadingOverlay" style="float: left;"></div>
+						<div id="cboxLoadingGraphic" style="float: left;"></div>
+					</div>
+					<div id="cboxMiddleRight" style="float: left;"></div>
+				</div>
+				<div style="clear: left;">
+					<div id="cboxBottomLeft" style="float: left;"></div>
+					<div id="cboxBottomCenter" style="float: left;"></div>
+					<div id="cboxBottomRight" style="float: left;"></div>
+				</div>
+			</div>
+			<div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div>
+		</div>
+		<div style="position: absolute; left: 0px; top: -2px; height: 1px; overflow: hidden; visibility: hidden; width: 1px;">
+			<span style="position: absolute; font-size: 300px; width: auto; height: auto; margin: 0px; padding: 0px; font-family: Roboto, Arial, sans-serif;">BESbswy</span>
+		</div>
+		<div id="YxJpXNk-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: auto !important; position: fixed !important; border: 0px none !important; min-height: 0px !important; min-width: 0px !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: auto !important; height: auto !important; z-index: 2000000000 !important; cursor: auto !important; float: none !important; bottom: 0px !important; right: 0px !important; left: auto !important; display: block;" class="">
+			<iframe id="IeVcI2A-1539450311233" src="about:blank" scrolling="no" title="chat widget" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: auto !important; right: auto !important; bottom: auto !important; left: auto !important; position: static !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 320px !important; height: 400px !important; z-index: 999999 !important; cursor: auto !important; float: none !important; display: none !important;" class="" frameborder="0"></iframe><iframe id="Axx99FX-1539450311233" src="about:blank" scrolling="no" title="chat widget" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; position: fixed !important; border: 0px none !important; padding: 0px !important; transition-property: none !important; z-index: 1000001 !important; cursor: auto !important; float: none !important; height: 40px !important; min-height: 40px !important; max-height: 40px !important; width: 320px !important; min-width: 320px !important; max-width: 320px !important; transform: rotate(0deg) translateZ(0px) !important; transform-origin: 0px center 0px !important; margin: 0px !important; top: auto !important; bottom: 0px !important; right: 10px !important; left: auto !important; display: block !important;" class="" frameborder="0"></iframe><iframe id="cky1qaG-1539450311233" src="about:blank" scrolling="no" title="chat widget" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; position: fixed !important; border: 0px none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; display: none !important; z-index: 1000003 !important; cursor: auto !important; float: none !important; top: auto !important; bottom: 40px !important; right: 10px !important; left: auto !important; width: 320px !important; max-width: 320px !important; min-width: 320px !important; height: 37px !important; max-height: 37px !important; min-height: 37px !important;" class="" frameborder="0"></iframe><iframe id="IlkFCNY-1539450311233" src="about:blank" scrolling="no" title="chat widget" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; position: fixed !important; border: 0px none !important; padding: 0px !important; transition-property: none !important; cursor: auto !important; float: none !important; transform: rotate(0deg) translateZ(0px) !important; transform-origin: 0px center 0px !important; bottom: 15px !important; top: auto !important; right: 4px !important; left: auto !important; width: 259px !important; max-width: 259px !important; min-width: 259px !important; height: 90px !important; max-height: 90px !important; min-height: 90px !important; z-index: 1000000 !important; margin: 0px !important; display: none !important;" class="" frameborder="0"></iframe>
+			<div id="l9PK172-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: rgb(255, 255, 255) none repeat scroll 0% 0% !important; opacity: 0 !important; top: 1px !important; bottom: auto !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: auto !important; height: 45px !important; display: block !important; z-index: 999997 !important; cursor: move !important; float: none !important; left: 0px !important; right: 96px !important;" class=""></div>
+			<div id="KBTfHsD-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: 0px !important; right: 96px !important; bottom: auto !important; left: 0px !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 6px !important; height: 100% !important; display: block !important; z-index: 999998 !important; cursor: w-resize !important; float: none !important;" class=""></div>
+			<div id="u8OmLEh-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: 0px !important; right: 0px !important; bottom: auto !important; left: auto !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 6px !important; height: 100% !important; display: block !important; z-index: 999998 !important; cursor: e-resize !important; float: none !important;" class=""></div>
+			<div id="cd1AhTk-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: 0px !important; right: 0px !important; bottom: auto !important; left: auto !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 100% !important; height: 6px !important; display: block !important; z-index: 999998 !important; cursor: n-resize !important; float: none !important;" class=""></div>
+			<div id="zs4bRRo-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: auto !important; right: 0px !important; bottom: 0px !important; left: auto !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 100% !important; height: 6px !important; display: block !important; z-index: 999998 !important; cursor: s-resize !important; float: none !important;" class=""></div>
+			<div id="DLTnENJ-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: 0px !important; right: auto !important; bottom: auto !important; left: 0px !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 12px !important; height: 12px !important; display: block !important; z-index: 999998 !important; cursor: nw-resize !important; float: none !important;" class=""></div>
+			<div id="EeplxLU-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: 0px !important; right: 0px !important; bottom: auto !important; left: auto !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 12px !important; height: 12px !important; display: block !important; z-index: 999998 !important; cursor: ne-resize !important; float: none !important;" class=""></div>
+			<div id="ykvTSH0-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: auto !important; right: auto !important; bottom: 0px !important; left: 0px !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 12px !important; height: 12px !important; display: block !important; z-index: 999998 !important; cursor: sw-resize !important; float: none !important;" class=""></div>
+			<div id="Y9FD3y2-1539450311232" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: auto !important; right: 0px !important; bottom: 0px !important; left: auto !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 12px !important; height: 12px !important; display: block !important; z-index: 999999 !important; cursor: se-resize !important; float: none !important;" class=""></div>
+			<div style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: 0px !important; right: auto !important; bottom: auto !important; left: 0px !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 100% !important; height: 100% !important; display: none !important; z-index: 1000001 !important; cursor: move !important; float: left !important;" class=""></div>
+		</div>
+		<iframe src="about:blank" style="display: none !important;" title="chat widget logging"></iframe>
+	</body>
+</html>

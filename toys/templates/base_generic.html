@@ -1,0 +1,586 @@
+{% load toys_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html class="js_active  vc_desktop  vc_transform  vc_transform  vc_transform  yes-js js_active js js rgba backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csstransitions fontface" lang="ru">
+	<head>
+		<title>Юзовка Игрушки</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<link rel="stylesheet" href="{% static 'css/theme.css' %}">
+		<link rel="stylesheet" href="{% static 'css/theme-1.css' %}">
+		<link rel="stylesheet" href="{% static 'css/header-custom.css' %}">
+		<link rel="stylesheet" href="{% static 'css/dynamic-css.css' %}">
+		<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+		<link rel="stylesheet" href="{% static 'css/vc_shortcodes-custom-css.css' %}">
+		<link rel="stylesheet" href="{% static 'css/woocommerce-smallscreen.css' %}">
+		<link rel="stylesheet" href="{% static 'css/wp-css.css' %}">
+		
+		<script src="{% static 'js/apps_body.js' %}"></script>
+		<script src="{% static 'js/apps_head.js' %}"></script>
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/jquery_plugins.js' %}"></script>
+		<script src="{% static 'js/wp-emoji-release.min.js' %}"></script>
+	</head>
+
+	<body class="page-template-default page page-id-30 woocommerce-js footer-static header-2 woocommerce wpb-js-composer js-comp-ver-5.1.1 vc_responsive">
+		<div id="yith-wcwl-popup-message" style="display: none;">
+			<div id="yith-wcwl-message"></div>
+		</div>
+		<div id="wrapper">
+			<!--div class="top-bar mobile-top-bar-hide">
+				<div class="container">
+					<div class="row">
+    					<div class="sidebar top-bar-left col-md-4"> 
+						</div>
+						<div class="sidebar top-bar-right col-md-8"> 
+							<aside id="text-6" class="separate-right p-color widget widget_text">
+								<div class="textwidget">Юзовка Игрушки</div> 
+							</aside>
+							<aside id="nav_menu-5" class="widget widget_nav_menu">
+								<div class="menu-topbar-menu-container">
+									<ul id="menu-topbar-menu" class="menu">
+										<li id="menu-item-2562" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2562">
+											<a href="/">Главная</a>
+										</li>
+										<li id="menu-item-2563" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2563">
+											<a href="#">
+    											<span class="x-menu-text">Игрушки <i class="fa fa-angle-down"></i></span>
+											</a>
+											{% get_main_categories as main_categories %}
+											<ul class="x-sub-menu x-sub-menu-standard x-list-style-none x-widget-area-wrapper">
+    											{% for main_category in main_categories %}
+    											<li>
+        											<a href="/toys/category/{{ main_category.id }}" class="x-menu-a-text">
+            											<span class="x-menu-text">{{ main_category.name }}</span>
+                                       </a>
+                                    </li>
+    											{% endfor %}
+											</ul>
+										</li>
+										<li id="menu-item-2564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2564">
+											<a href="/toys/contests">Конкурсы</a>
+										</li>
+									</ul>
+								</div>
+							</aside>
+						</div>
+					</div>
+				</div>
+			</div--> 
+			
+			<header id="header-mobile" class="mobile-header header-mobile-2">
+				<div class="header-mobile-before"> 
+					<a href="http://themes.g5plus.net/handmade/" title="HandMade - Shop WordPress WooCommerce Theme"> 
+						<img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/logo.png" alt="HandMade - Shop WordPress WooCommerce Theme"> 
+					</a>
+				</div>
+				<div class="header-container-wrapper menu-drop-fly header-mobile-sticky">
+					<div class="container header-mobile-wrapper">
+						<div class="header-mobile-inner">
+							<div class="toggle-icon-wrapper toggle-mobile-menu" data-ref="nav-menu-mobile" data-drop-type="fly">
+								<div class="toggle-icon"> 
+									<span></span>
+								</div>
+							</div>
+							<div class="header-customize">
+								<div class="search-button-wrapper header-customize-item"> 
+									<a class="icon-search-menu" href="#" data-search-type="standard">
+										<i class="wicon fa fa-search"></i>
+									</a>
+								</div>
+								<div class="shopping-cart-wrapper header-customize-item no-price style-default">
+									<div class="widget_shopping_cart_content">
+										<div class="widget_shopping_cart_icon">
+											<i class="wicon fa fa-shopping-cart"></i>
+											<span class="total">0</span>
+										</div>
+										<div class="sub-total-text">
+											<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>0.00</span>
+										</div>
+									<div class="cart_list_wrapper">
+										<ul class="cart_list product_list_widget ps-container" style="max-height: 325px;" data-ps-id="eaba64d6-3535-da1e-de8c-98195c4523aa">
+											<li class="empty">
+												<h4>An empty cart</h4>
+												<p>You have no item in your shopping cart</p>
+											</li>
+
+											<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px; display: block;">
+												<div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div>
+											</div>
+											<div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px; display: block;">
+												<div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div>
+											</div>
+										</ul> <!-- end product list -->
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="nav-menu-mobile" class="header-mobile-nav menu-drop-fly">
+							<form class="search-form-menu-mobile" method="get" action="http://themes.g5plus.net/handmade"> 
+								<input name="s" placeholder="Search..." type="text"> 
+								<button type="submit"><i class="fa fa-search"></i></button>
+							</form>
+							<ul id="menu-main-menu" class="nav-menu-mobile x-nav-menu x-nav-menu_main-menu x-animate-slide-up" data-breakpoint="991">
+								<li id="menu-item-mobile-2294" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children x-menu-item x-sub-menu-standard">
+									<a href="/" class="x-menu-a-text">
+										<span class="x-menu-text">Главная</span>
+									</a>
+								</li>
+								<li id="menu-item-mobile-2295" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children x-menu-item x-sub-menu-standard">
+									<a href="#" class="x-menu-a-text">
+										<span class="x-menu-text">Игрушки</span>
+										<b class="x-caret"></b>
+									</a>
+									<ul class="x-sub-menu x-sub-menu-standard x-list-style-none x-widget-area-wrapper">
+										{% for main_category in main_categories %}
+										<li id="menu-item-mobile-2496" class="menu-item menu-item-type-post_type menu-item-object-page x-menu-item x-sub-menu-standard">
+											<a href="/toys/category/{{ main_category.id }}" class="x-menu-a-text">
+												<span class="x-menu-text">{{ main_category.name }}</span>
+											</a>
+										</li>
+										{% endfor %}
+									</ul>
+								</li>
+								<li id="menu-item-mobile-2497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children x-menu-item x-sub-menu-standard">
+									<a href="toys/articles" class="x-menu-a-text">
+										<span class="x-menu-text">Статьи</span>
+									</a>
+								</li>
+								<li id="menu-item-mobile-2440" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children x-menu-item x-sub-menu-standard">
+									<a href="/toys/contests" class="x-menu-a-text">
+										<span class="x-menu-text">Конкурсы</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="main-menu-overlay"></div>
+					</div>
+				</div> 
+			</header> 
+			
+			<header id="header" class="main-header header-1 header-desktop-wrapper">
+				<div class="header-nav-above">
+					<div class="container">
+						<div class="fl">
+							<div class="header-customize header-customize-left">
+								<div class="custom-text-wrapper header-customize-item">
+									<ul class="custom-list" style="margin-bottom: 30px;margin-right: -15px">
+										<li style="color:#999">Follow us</li>
+										<li style="font-size: 22px">Socials</li>
+									</ul>
+								</div>
+								<ul class="header-customize-item header-social-profile-wrapper">
+									<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+									<li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="header-logo"> 
+							<a href="http://themes.g5plus.net/handmade/" title="HandMade - Shop WordPress WooCommerce Theme"> 
+								<img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/logo-02.png" alt="HandMade - Shop WordPress WooCommerce Theme"> 
+							</a>
+						</div>
+						<div class="fr">
+							<div class="header-customize header-customize-right header-customize-separate">
+								<div class="custom-text-wrapper header-customize-item">
+									<div class="contact-info"> 
+										<i class="fa fa-phone"></i> + (102) 3456 789
+									</div>
+								</div>
+								<div class="shopping-cart-wrapper header-customize-item with-price">
+									<div class="widget_shopping_cart_content">
+										<div class="widget_shopping_cart_icon">
+											<i class="wicon fa fa-shopping-cart"></i>
+											<span class="total">0</span>
+										</div>
+										<div class="sub-total-text">
+											<span class="woocommerce-Price-amount amount">
+												<span class="woocommerce-Price-currencySymbol">$</span>0.00
+											</span>
+										</div>
+										<div class="cart_list_wrapper">
+											<ul class="cart_list product_list_widget ps-container" style="max-height: 325px;" data-ps-id="165c6a2c-764b-3dc1-ca02-678943dcbbd9">
+												<li class="empty">
+													<h4>An empty cart</h4>
+													<p>You have no item in your shopping cart</p>
+												</li>
+												<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px; display: block;">
+													<div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div>
+												</div>
+												<div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px; display: block;">
+													<div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div>
+												</div>
+											</ul><!-- end product list -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 84px;">
+					<div class="header-nav-wrapper header-sticky sticky-scheme-inherit nav-hover-primary">
+						<div class="container">
+							<div class="header-wrapper">
+								<div class="header-left">
+									<div id="primary-menu" class="menu-wrapper">
+										<ul id="main-menu" class="main-menu x-nav-menu x-nav-menu_main-menu x-animate-slide-up" data-breakpoint="991">
+											<li class="logo-sticky"> 
+												<a href="http://themes.g5plus.net/handmade/" title="HandMade - Shop WordPress WooCommerce Theme"> 
+													<img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/09/logo-02.png" alt="HandMade - Shop WordPress WooCommerce Theme"> 
+												</a>
+											</li>
+											<li id="menu-item-2294" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent x-menu-item">
+												<a href="/" class="x-menu-a-text">
+													<span class="x-menu-text">Главная</span>
+												</a>
+											</li>
+											<li id="menu-item-2295" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children x-menu-item x-sub-menu-standard">
+												<a href="#" class="x-menu-a-text">
+													<span class="x-menu-text">Игрушки</span>
+													<b class="x-caret"></b>
+												</a>
+												<ul class="x-sub-menu x-sub-menu-standard x-list-style-none x-widget-area-wrapper" style="left: 104.383px; right: auto;">
+            									{% for main_category in main_categories %}
+													<li id="menu-item-2496" class="menu-item menu-item-type-post_type menu-item-object-page x-menu-item x-sub-menu-standard">
+														<a href="/toys/category/{{ main_category.id }}" class="x-menu-a-text">
+															<span class="x-menu-text">{{ main_category.name }}</span>
+														</a>
+													</li>
+													{% endfor %}
+												</ul>
+											</li>
+											<li id="menu-item-2497" class="menu-item menu-item-type-post_type menu-item-object-page x-menu-item">
+												<a href="/toys/articles" class="x-menu-a-text">
+													<span class="x-menu-text">Статьи</span>
+												</a>
+												</ul>
+											</li>
+											<li id="menu-item-2440" class="menu-item menu-item-type-custom menu-item-object-custom x-menu-item">
+												<a href="/toys/contests" class="x-menu-a-text">
+													<span class="x-menu-text">Конкурсы</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="header-right">
+									<div class="header-customize header-customize-nav">
+										<div class="search-button-wrapper header-customize-item style-default"> 
+											<a class="icon-search-menu" href="#" data-search-type="standard">
+												<i class="wicon fa fa-search"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</header>
+			
+			<div id="search_popup_wrapper" class="dialog">
+				<div class="dialog__overlay"></div>
+				<div class="dialog__content">
+					<div class="morph-shape"> 
+						<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 520 280" preserveAspectRatio="none"> 
+							<rect x="3" y="3" fill="none" width="516" height="276"></rect> 
+						</svg>
+					</div>
+					<div class="dialog-inner">
+						<h2>Enter your keyword</h2>
+						<form method="get" action="http://themes.g5plus.net/handmade/" class="search-popup-inner"> 
+							<input name="s" placeholder="Search..." type="text"> 
+							<button type="submit">Search</button>
+						</form>
+						<div>
+							<button class="action" data-dialog-close="close" type="button">
+								<i class="fa fa-close"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="wrapper-content" class="clearfix"> 
+            <div class="section-page-title page-title-margin container"> 
+                <section class="page-title-wrap page-title-height page-title-wrap-bg page-title-center" style="background-image: url({% static 'img/bg-page-title.jpg' %});">
+                    <div class="page-title-overlay"></div>
+                    <div class="container">
+                        <div class="page-title-inner block-center">
+                            <div class="block-center-inner">
+                                <h1>{% block content_title %}{% endblock %}</h1>
+                            </div>
+                        </div>
+                    </div> 
+                </section>
+                
+                <section class="breadcrumb-wrap breadcrumb-archive-product-wrap">
+                    <div class="container">
+                        <ul class="breadcrumbs">
+                            <li><a rel="v:url" href="/" class="home">Главная</a></li>
+                            {% block breadcrumbs %}
+                            {% endblock %}
+                        </ul>
+                        <div class="catalog-filter clearfix">
+                            <p class="woocommerce-result-count"> Showing all 5 results</p>
+                            <form class="woocommerce-ordering" method="get"> 
+                                <select name="orderby" class="orderby">
+                                    <option value="menu_order" selected="selected">Default sorting</option>
+                                    <option value="popularity">Sort by popularity</option>
+                                    <option value="rating">Sort by average rating</option>
+                                    <option value="date">Sort by newness</option>
+                                    <option value="price">Sort by price: low to high</option>
+                                    <option value="price-desc">Sort by price: high to low</option> 
+                                </select> 
+                                <input name="paged" value="1" type="hidden">
+                            </form>
+                        </div>
+                    </div> 
+                </section>
+            </div>			
+			
+            {% block content %}{% endblock %}
+			</div>
+							
+			
+			<footer class="main-footer-wrapper light">
+				<div id="wrapper-footer">
+					<div class="main-footer">
+						<div class="footer_inner clearfix">
+							<div class="footer-top-bar-wrapper">
+								<div class="footer-top-bar-inner">
+									<div class="full">
+										<div class=" sidebar"> <aside id="handmade-partner-carousel-4" class="widget widget-partner-carousel">
+												<div class="container">
+													<div class="partner-wrap col-md-12  owl-carousel  owl-theme" data-plugin-options="{ &quot;items&quot; : 5,&quot;pagination&quot;: false, &quot;navigation&quot;: false, &quot;autoPlay&quot;: true}" style="opacity: 1; display: block;">
+														<div class="owl-wrapper-outer">
+															<div class="owl-wrapper" style="width: 2736px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(-228px, 0px, 0px);">
+																<div class="owl-item" style="width: 228px;">
+																	<div class="partner content-middle-inner"> <a href="#" title="Vintage Old"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/partner-1.jpg" alt="Vintage Old"> </a></div>
+																</div>
+																<div class="owl-item" style="width: 228px;">
+																	<div class="partner content-middle-inner"> <a href="#" title="Vintage"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/partner-2.jpg" alt="Vintage"> </a></div>
+																</div>
+																<div class="owl-item" style="width: 228px;">
+																	<div class="partner content-middle-inner"> <a href="#" title="Vintage Interior"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/partner-3.jpg" alt="Vintage Interior"> </a></div>
+																</div>
+																<div class="owl-item" style="width: 228px;">
+																	<div class="partner content-middle-inner"> <a href="#" title="Vintage Design"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/partner-4.jpg" alt="Vintage Design"> </a></div>
+																</div>
+																<div class="owl-item" style="width: 228px;">
+																	<div class="partner content-middle-inner"> <a href="#" title="Vintage"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/partner-5.jpg" alt="Vintage"> </a></div>
+																</div>
+																<div class="owl-item" style="width: 228px;">
+																	<div class="partner content-middle-inner"> <a href="#" title="Vintage"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/partner-2.jpg" alt="Vintage"> </a></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div> </aside><aside id="handmade-map-scroll-up-3" class="widget widget-map-scroll-up">
+												<div class="map-scroll-up">
+													<div class="link-wrap">
+														<div class="map col-md-6 col-sm-6 col-xs-6"> <a href="javascript:;" class="a-map p-color-hover"> <i class="pe-7s-map-marker pe-lg pe-va"></i> <span>See map</span> </a></div>
+														<div class="scroll-up col-md-6 col-sm-6 col-xs-6"> <a href="javascript:;" class="a-scroll-up p-color-hover"> <i class="pe-7s-up-arrow"></i> <span>Scroll up</span> </a></div>
+													</div>
+													<div class="handmade-map container" style="display: none;">
+														<div class="row">
+															<div class="col-md-12">
+																<div class="handmade-google-map " data-location-x="40.6700" data-location-y="-73.9400" data-marker-title="Google map" style="height: 450px; position: relative; overflow: hidden;" data-map-zoom="12" data-map-style="none">
+																	<div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+																		<div style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;" class="gm-style">
+																			<div style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;" tabindex="0">
+																				<div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);">
+																					<div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;">
+																						<div style="position: absolute; left: 0px; top: 0px; z-index: 0;">
+																							<div style="position: absolute; z-index: 988; transform: matrix(1, 0, 0, 1, -186, -169);">
+																								<div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;">
+																									<div style="width: 256px; height: 256px;"></div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div>
+																					<div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div>
+																					<div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;">
+																						<div style="position: absolute; left: 0px; top: 0px; z-index: -1;">
+																							<div style="position: absolute; z-index: 988; transform: matrix(1, 0, 0, 1, -186, -169);">
+																								<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div>
+																							</div>
+																						</div>
+																						<div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false"></div>
+																					</div>
+																					<div style="position: absolute; left: 0px; top: 0px; z-index: 0;">
+																						<div style="position: absolute; z-index: 988; transform: matrix(1, 0, 0, 1, -186, -169);"></div>
+																					</div>
+																				</div>
+																				<div style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;" class="gm-style-pbc"><p class="gm-style-pbt"></p></div>
+																				<div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;">
+																					<div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);">
+																						<div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div>
+																						<div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div>
+																						<div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;">
+																							<div style="width: 27px; height: 43px; overflow: hidden; position: absolute; opacity: 0; left: -14px; top: -43px; z-index: 0;"><img style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" usemap="#gmimap0"><map name="gmimap0" id="gmimap0"><area log="miw" coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75" shape="poly" title="Google map" style="cursor: pointer; touch-action: none;"></map></div>
+																						</div>
+																						<div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div>
+																					</div>
+																				</div>
+																			</div><iframe aria-hidden="true" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: medium none;" src="about:blank" frameborder="0"></iframe></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div> </aside></div>
+									</div>
+								</div>
+							</div>
+							<div class="footer_top_holder col-4">
+								<div class="container">
+									<div class="row footer-top-col-4 footer-1">
+										<div class="sidebar footer-sidebar col-md-3 col-sm-6 col-1"><aside id="wolverine-footer-logo-2" class="widget widget-footer-logo">
+												<div class="footer-logo"> <a href="http://themes.g5plus.net/handmade"><img class="footer-logo-img" src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/logo.png" alt="Handmade"></a>
+													<div class="sub-description"> Letterpress, gold foil stamping, and more. Quality, sustainable materials like thick 100% PCW paper and veg-based inks.</div>
+												</div> </aside></div>
+										<div class="sidebar footer-sidebar col-md-3 col-sm-6 col-2"><aside id="nav_menu-3" class="widget widget_nav_menu"><h4 class="widget-title"><span>Information</span></h4>
+												<div class="menu-footer-information-container"><ul id="menu-footer-information" class="menu"><li id="menu-item-2430" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2430"><a href="#">About Us</a></li><li id="menu-item-2431" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2431"><a href="#">Delivery Information</a></li><li id="menu-item-2432" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2432"><a href="#">Privacy policy</a></li><li id="menu-item-2433" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2433"><a href="#">Terms &amp; Conditions</a></li><li id="menu-item-2434" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2434"><a href="#">Contact Us</a></li></ul></div>
+											</aside></div>
+										<div class="sidebar footer-sidebar col-md-3 col-sm-6 col-3"><aside id="nav_menu-4" class="widget widget_nav_menu"><h4 class="widget-title"><span>Extras</span></h4>
+												<div class="menu-footer-extras-container"><ul id="menu-footer-extras" class="menu"><li id="menu-item-2435" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2435"><a href="#">Brands</a></li><li id="menu-item-2436" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2436"><a href="#">Gift Vouchers</a></li><li id="menu-item-2437" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2437"><a href="#">Affiliates</a></li><li id="menu-item-2438" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2438"><a href="#">Specials</a></li><li id="menu-item-2439" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2439"><a href="#">Site Map</a></li></ul></div>
+											</aside></div>
+										<div class="sidebar footer-sidebar col-md-3 col-sm-6 col-4"><aside id="text-2" class="widget-title-s-font widget widget_text"><h4 class="widget-title"><span>Contact us</span></h4>
+												<div class="textwidget"><ul class="footer-contact-us"><li> <i class="fa fa-map-marker p-color"></i> <span> Great Store London Oxford Street, 012 United Kingdom. </span></li><li> <i class="fa fa-envelope p-color"></i> <span> emailgreatstore@gmail.com </span></li><li> <i class="fa fa-phone p-color"></i> <span> (+92) 3456 7890 </span></li></ul></div> </aside></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bottom-bar-wrapper">
+						<div class="bottom-bar-inner">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-6 sidebar text-left"> 
+    									<aside id="text-3" class="copyright margin-top-10 widget widget_text">
+											<div class="textwidget">
+												<div>© Copyright 2018. Керимов Сергей.</div>
+												<div>Работает на Django</div>
+											</div> 
+										</aside>
+									</div>
+									<!--div class="col-md-6 sidebar text-right"> <aside id="handmade-payment-gate-2" class="widget widget-payment-gate"><ul class="payment-gate"><li> <a target="_blank" href="http://www.mastercard.com" title="Master card"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/master_card.jpg" alt="Master card"> </a></li><li> <a target="_blank" href="http://www.visa.com" title="Visa"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/visa.jpg" alt="Visa"> </a></li><li> <a target="_blank" href="http://www.paypal.com" title="Paypal"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/paypal.jpg" alt="Paypal"> </a></li><li> <a target="_blank" href="https://www.americanexpress.com/" title="American Express"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/american_express.jpg" alt="American Express"> </a></li><li> <a target="_blank" href="https://www.westernunion.com" title="Weston Union"> <img src="http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/weston_union.jpg" alt="Weston Union"> </a></li></ul> </aside></div-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</footer>
+		</div>
+		<a class="back-to-top" href="javascript:;"> <i class="fa fa-angle-up"></i> </a> 
+
+		<script type="text/javascript">
+			var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+			(function () {
+				var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+				s1.async = true;
+				s1.src = 'https://embed.tawk.to/58d49c44f97dd14875f59da4/default';
+				s1.charset = 'UTF-8';
+				s1.setAttribute('crossorigin', '*');
+				s0.parentNode.insertBefore(s1, s0);
+			})();
+		</script>
+		
+		<script type="text/javascript">
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+			/*  */
+			var _wpcf7 = {"recaptcha": {"messages": {"empty": "Please verify that you are not a robot."}}, "cached": "1"};
+			/*  */
+			/*  */
+			var woocommerce_params = {"ajax_url": "\/handmade\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/handmade\/?wc-ajax=%%endpoint%%"};
+			/*  */
+			/*  */
+			var wc_cart_fragments_params = {"ajax_url": "\/handmade\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/handmade\/?wc-ajax=%%endpoint%%", "cart_hash_key": "wc_cart_hash_c44dd2ca6b3e914a8f1e1721af859412", "fragment_name": "wc_fragments_c44dd2ca6b3e914a8f1e1721af859412"};
+			/*  */
+			/*  */
+			var yith_woocompare = {"ajaxurl": "\/handmade\/?wc-ajax=%%endpoint%%", "actionadd": "yith-woocompare-add-product", "actionremove": "yith-woocompare-remove-product", "actionview": "yith-woocompare-view-table", "actionreload": "yith-woocompare-reload-product", "added_label": "Added", "table_title": "Product Comparison", "auto_open": "yes", "loader": "http:\/\/themes.g5plus.net\/handmade\/wp-content\/plugins\/yith-woocommerce-compare\/assets\/images\/loader.gif", "button_text": "Compare", "cookie_name": "yith_woocompare_list"};
+			/*  */
+			/*  */
+			var yith_wcwl_l10n = {"ajax_url": "\/handmade\/wp-admin\/admin-ajax.php", "redirect_to_cart": "no", "multi_wishlist": "", "hide_add_button": "1", "is_user_logged_in": "", "ajax_loader_url": "http:\/\/themes.g5plus.net\/handmade\/wp-content\/plugins\/yith-woocommerce-wishlist\/assets\/images\/ajax-loader.gif", "remove_from_wishlist_after_add_to_cart": "yes", "labels": {"cookie_disabled": "We are sorry, but this feature is available only if cookies are enabled on your browser.", "added_to_cart_message": "<div class=\"woocommerce-message\">Product correctly added to cart<\/div>"}, "actions": {"add_to_wishlist_action": "add_to_wishlist", "remove_from_wishlist_action": "remove_from_wishlist", "move_to_another_wishlist_action": "move_to_another_wishlsit", "reload_wishlist_and_adding_elem_action": "reload_wishlist_and_adding_elem"}};
+			/*  */
+			/*  */
+			var g5plus_framework_constant = {"product_compare": "Compare", "product_wishList": "WishList"};
+			var g5plus_framework_ajax_url = "http:\/\/themes.g5plus.net\/handmade\/wp-admin\/admin-ajax.php?activate-multi=true";
+			var g5plus_framework_theme_url = "http:\/\/themes.g5plus.net\/handmade\/wp-content\/themes\/handmade\/";
+			var g5plus_framework_site_url = "http:\/\/themes.g5plus.net\/handmade";
+			/*  */
+			/*  */
+			var xmenu_meta = {"setting-responsive-breakpoint": "991"};
+			var xmenu_meta_custom = [];
+			/*  */
+		</script>
+		
+		<script>
+			jQuery("style#g5plus_custom_style").append("@media screen and (min-width: 992px) {#menu-item-mobile-2475 > ul.x-sub-menu{background-image:url('http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/bg-mega-menu.png');background-attachment:scroll;background-position:bottom right;background-repeat:no-repeat;background-size:auto;}}");
+			jQuery("style#g5plus_custom_style").append("@media screen and (min-width: 992px) {#menu-item-2475 > ul.x-sub-menu{background-image:url('http://themes.g5plus.net/handmade/wp-content/uploads/2015/10/bg-mega-menu.png');background-attachment:scroll;background-position:bottom right;background-repeat:no-repeat;background-size:auto;}}");
+		</script>
+		
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&amp;language=en_US&amp;key=AIzaSyDsUcTjt43mTheN9ruCsQVgBE-wgN6_AfY&amp;ver=4.7.11"></script>
+		<script src="js/jquery_plugins.js" data-minify="1"></script>
+		
+		<div id="cboxOverlay" style="display: none;"></div>
+		<div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
+			<div id="cboxWrapper">
+				<div>
+					<div id="cboxTopLeft" style="float: left;"></div>
+					<div id="cboxTopCenter" style="float: left;"></div>
+					<div id="cboxTopRight" style="float: left;"></div>
+				</div>
+				<div style="clear: left;">
+					<div id="cboxMiddleLeft" style="float: left;"></div>
+					<div id="cboxContent" style="float: left;">
+						<div id="cboxTitle" style="float: left;"></div>
+						<div id="cboxCurrent" style="float: left;"></div>
+						<button type="button" id="cboxPrevious"></button>
+						<button type="button" id="cboxNext"></button>
+						<button id="cboxSlideshow"></button>
+						<div id="cboxLoadingOverlay" style="float: left;"></div>
+						<div id="cboxLoadingGraphic" style="float: left;"></div>
+					</div>
+					<div id="cboxMiddleRight" style="float: left;"></div>
+				</div>
+				<div style="clear: left;">
+					<div id="cboxBottomLeft" style="float: left;"></div>
+					<div id="cboxBottomCenter" style="float: left;"></div>
+					<div id="cboxBottomRight" style="float: left;"></div>
+				</div>
+			</div>
+			<div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div>
+		</div>
+		<div style="position: absolute; left: 0px; top: -2px; height: 1px; overflow: hidden; visibility: hidden; width: 1px;">
+			<span style="position: absolute; font-size: 300px; width: auto; height: auto; margin: 0px; padding: 0px; font-family: Roboto, Arial, sans-serif;">BESbswy</span>
+		</div>
+		<div id="YxJpXNk-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: auto !important; position: fixed !important; border: 0px none !important; min-height: 0px !important; min-width: 0px !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: auto !important; height: auto !important; z-index: 2000000000 !important; cursor: auto !important; float: none !important; bottom: 0px !important; right: 0px !important; left: auto !important; display: block;" class="">
+			<iframe id="IeVcI2A-1539450311233" src="about:blank" scrolling="no" title="chat widget" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: auto !important; right: auto !important; bottom: auto !important; left: auto !important; position: static !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 320px !important; height: 400px !important; z-index: 999999 !important; cursor: auto !important; float: none !important; display: none !important;" class="" frameborder="0"></iframe><iframe id="Axx99FX-1539450311233" src="about:blank" scrolling="no" title="chat widget" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; position: fixed !important; border: 0px none !important; padding: 0px !important; transition-property: none !important; z-index: 1000001 !important; cursor: auto !important; float: none !important; height: 40px !important; min-height: 40px !important; max-height: 40px !important; width: 320px !important; min-width: 320px !important; max-width: 320px !important; transform: rotate(0deg) translateZ(0px) !important; transform-origin: 0px center 0px !important; margin: 0px !important; top: auto !important; bottom: 0px !important; right: 10px !important; left: auto !important; display: block !important;" class="" frameborder="0"></iframe><iframe id="cky1qaG-1539450311233" src="about:blank" scrolling="no" title="chat widget" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; position: fixed !important; border: 0px none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; display: none !important; z-index: 1000003 !important; cursor: auto !important; float: none !important; top: auto !important; bottom: 40px !important; right: 10px !important; left: auto !important; width: 320px !important; max-width: 320px !important; min-width: 320px !important; height: 37px !important; max-height: 37px !important; min-height: 37px !important;" class="" frameborder="0"></iframe><iframe id="IlkFCNY-1539450311233" src="about:blank" scrolling="no" title="chat widget" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; position: fixed !important; border: 0px none !important; padding: 0px !important; transition-property: none !important; cursor: auto !important; float: none !important; transform: rotate(0deg) translateZ(0px) !important; transform-origin: 0px center 0px !important; bottom: 15px !important; top: auto !important; right: 4px !important; left: auto !important; width: 259px !important; max-width: 259px !important; min-width: 259px !important; height: 90px !important; max-height: 90px !important; min-height: 90px !important; z-index: 1000000 !important; margin: 0px !important; display: none !important;" class="" frameborder="0"></iframe>
+			<div id="l9PK172-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: rgb(255, 255, 255) none repeat scroll 0% 0% !important; opacity: 0 !important; top: 1px !important; bottom: auto !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: auto !important; height: 45px !important; display: block !important; z-index: 999997 !important; cursor: move !important; float: none !important; left: 0px !important; right: 96px !important;" class=""></div>
+			<div id="KBTfHsD-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: 0px !important; right: 96px !important; bottom: auto !important; left: 0px !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 6px !important; height: 100% !important; display: block !important; z-index: 999998 !important; cursor: w-resize !important; float: none !important;" class=""></div>
+			<div id="u8OmLEh-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: 0px !important; right: 0px !important; bottom: auto !important; left: auto !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 6px !important; height: 100% !important; display: block !important; z-index: 999998 !important; cursor: e-resize !important; float: none !important;" class=""></div>
+			<div id="cd1AhTk-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: 0px !important; right: 0px !important; bottom: auto !important; left: auto !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 100% !important; height: 6px !important; display: block !important; z-index: 999998 !important; cursor: n-resize !important; float: none !important;" class=""></div>
+			<div id="zs4bRRo-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: auto !important; right: 0px !important; bottom: 0px !important; left: auto !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 100% !important; height: 6px !important; display: block !important; z-index: 999998 !important; cursor: s-resize !important; float: none !important;" class=""></div>
+			<div id="DLTnENJ-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: 0px !important; right: auto !important; bottom: auto !important; left: 0px !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 12px !important; height: 12px !important; display: block !important; z-index: 999998 !important; cursor: nw-resize !important; float: none !important;" class=""></div>
+			<div id="EeplxLU-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: 0px !important; right: 0px !important; bottom: auto !important; left: auto !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 12px !important; height: 12px !important; display: block !important; z-index: 999998 !important; cursor: ne-resize !important; float: none !important;" class=""></div>
+			<div id="ykvTSH0-1539450311231" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: auto !important; right: auto !important; bottom: 0px !important; left: 0px !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 12px !important; height: 12px !important; display: block !important; z-index: 999998 !important; cursor: sw-resize !important; float: none !important;" class=""></div>
+			<div id="Y9FD3y2-1539450311232" style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: auto !important; right: 0px !important; bottom: 0px !important; left: auto !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 12px !important; height: 12px !important; display: block !important; z-index: 999999 !important; cursor: se-resize !important; float: none !important;" class=""></div>
+			<div style="outline: currentcolor none medium !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: transparent none repeat scroll 0% 0% !important; opacity: 1 !important; top: 0px !important; right: auto !important; bottom: auto !important; left: 0px !important; position: absolute !important; border: 0px none !important; min-height: auto !important; min-width: auto !important; max-height: none !important; max-width: none !important; padding: 0px !important; margin: 0px !important; transition-property: none !important; transform: none !important; width: 100% !important; height: 100% !important; display: none !important; z-index: 1000001 !important; cursor: move !important; float: left !important;" class=""></div>
+		</div>
+		<iframe src="about:blank" style="display: none !important;" title="chat widget logging"></iframe>
+	</body>
+</html>

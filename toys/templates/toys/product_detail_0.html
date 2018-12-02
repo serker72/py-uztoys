@@ -1,0 +1,75 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="col-xs-12" id="slider">
+                    {% if product.productimage_set.all %}
+                    <!-- Top part of the slider -->
+                    <div class="row">
+                        <div class="col-sm-12" id="carousel-bounding-box">
+                            <div class="carousel slide" id="myCarousel">
+                                <!-- Carousel items -->
+                                <div class="carousel-inner">
+                                    {% for img in product.productimage_set.all %}
+                                        {% if img.sort == 1 %}
+                                        <div class="active item" data-slide-number="0">
+                                            <img src="{{ mediaPath }}{{ img.photo }}">
+                                        </div>
+                                        {% else %}
+                                        <div class="item">
+                                            <img src="{{ mediaPath }}{{ img.photo }}">
+                                        </div>
+                                        {% endif %}                      
+                                    {% endfor %}
+                                </div>
+                                <!-- Carousel nav -->
+                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="product-item-wrapper">
+                    <h3>{{ product.name }}</h3>
+                    <p class="in-para">
+                        {{ product.description }}
+                    </p>
+                    <div class="price_single">
+                        <span class="reducedfrom item_price">
+                            {{ product.price|floatformat }} <i class="fa fa-rub"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                {% if product.productpropertyvalue_set.all %}
+                    <table class="table table-striped">
+                        <tbody>
+                            {% for value in product.productpropertyvalue_set.all %}
+                            <tr>
+                                <th>{{ value.property.name }}</th>
+                                <td>{{ value.val }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-2" style="background-color:#000;">
+    1
+    2
+    </div>
+</div>
+{% endblock %}

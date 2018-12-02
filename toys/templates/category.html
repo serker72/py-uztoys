@@ -1,0 +1,171 @@
+{% extends "base_generic.html" %}
+
+{% block content_title %}
+    {{ currentCategory.name }}
+{% endblock %}
+
+{% block breadcrumbs %}
+    <li>{{ currentCategory.name }}</li>
+{% endblock %}
+
+{% block content %}
+<!--
+{% if categories %}
+<main class="site-content-page">
+    <div class="container clearfix">
+        <div class="row clearfix">
+            <div class="site-content-page-inner col-md-12">
+                <div class="page-content">
+    <div id="category-{{ currentCategory.id }}" class="page type-page status-publish hentry">
+        <div class="entry-content">
+            <div class="fullwidth">
+                <div class="vc_row wpb_row vc_row-fluid">
+                    <div class="wpb_column vc_column_container vc_col-sm-12">
+                        <div class="vc_column-inner">
+                            <div class="wpb_wrapper">
+                                <div class="portfolio-container">
+                                    <div class="portfolio overflow-hidden paging">
+                                        <div class="portfolio-tabs category">
+                                        </div>
+                                        <div class="portfolio-wrapper handmade-col-md-3 col-padding-15 grid ">
+                                            {% for category in categories %}
+                                            <div class="portfolio-item hover-dir branding home-living knitting  hover-align-center">
+                                                <div class="entry-thumbnail title-category">
+                                                    <img src="{{ mediaPath }}{{ category.photo }}" width="570" height="460">
+                                                    <div class="entry-thumbnail-hover p-bg-rgba-color">
+                                                        <div class="entry-hover-inner">
+                                                            <span class="icon-logo">
+                                                                <a href="#">
+                                                                    <i class="fa fa-search  fc-white"></i>
+                                                                </a>
+                                                            </span>
+                                                            <a class="line-height-1" href="#">
+                                                                <div class="title fc-white">
+                                                                </div>
+                                                            </a>
+                                                            <span class="category line-height-1">
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                        <div style="clear: both">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            </div>
+        </div>
+    	</div>
+	</div>
+</main>
+{% endif %}
+-->
+
+<main class="site-content-archive-product">
+    <div class="container clearfix">
+        <div class="row clearfix">
+            <div class="sidebar woocommerce-sidebar col-md-3 hidden-sm hidden-xs sidebar-small">
+                <aside id="woocommerce_price_filter-2" class="widget woocommerce widget_price_filter">
+                </aside>
+                
+                <aside id="woocommerce_product_search-2" class="widget woocommerce widget_product_search">
+                </aside>
+                
+                <aside id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories">
+                    <h4 class="widget-title">
+                        <span>Категории</span>
+                    </h4>
+                    <ul class="product-categories">
+                        {% for category in categories %}
+                        <li class="cat-item cat-item-{{ category.id }} {% if category.id == currentCategory.id %}current-cat{% endif %}">
+                            <a href="/toys/category/{{ category.id }}/">{{ category.name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </aside>
+                
+                <aside id="woocommerce_layered_nav-2" class="widget woocommerce widget_layered_nav woocommerce-widget-layered-nav">
+                </aside>
+                
+                <aside id="woocommerce_top_rated_products-2" class="widget woocommerce widget_top_rated_products">
+                </aside>
+                
+                <aside id="woocommerce_product_tag_cloud-2" class="widget woocommerce widget_product_tag_cloud">
+                </aside>
+            </div>
+            
+            <div class="col-md-9">
+                <div class="archive-product-wrap clearfix layout-container">
+                    <div class="product-listing woocommerce clearfix columns-3">
+                        {% for product in products %}
+                        <div class="product-item-wrap post-1547 product type-product status-publish has-post-thumbnail product_cat-every-day product_cat-personal product_cat-special-goods product_tag-every-day product_tag-person first instock shipping-taxable purchasable product-type-simple">
+                            <div class="product-item-inner">
+                                <div class="product-thumb">
+                                    <div class="product-flash-wrap"></div>
+                                    {% if product.productimage_set.all %}
+                                    {% else %}
+                                    {% endif %}
+                                    {% with img=product.productimage_set.first %}
+                                    <div class="product-thumb-primary">
+                                        <img class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" src="{{ mediaPath }}{{ img.photo }}" width="300" height="300" />
+                                    </div>
+                                    <div class="product-thumb-secondary">
+                                        <img class="attachment-shop_catalog size-shop_catalog" src="{{ mediaPath }}{{ img.photo }}" width="300" height="300" />
+                                    </div>
+                                    {% endwith %}
+                                    <a class="product-link" href="/toys/product/{{ product.id }}"></a>
+                                    <div class="product-actions">
+                                        <a class="compare" data-toggle="tooltip" data-placement="top" href="" data-product_id="1547" data-original-title="Compare">
+                                            <i class="fa fa-exchange"></i>
+                                        </a>
+                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-1547">
+                                        </div>
+                                        <div class="clear"></div>
+                                        <a class="product-quick-view" data-toggle="tooltip" data-placement="top" href="" data-product_id="1547" data-original-title="Quick view">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                        <div class="add-to-cart-wrap" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
+                                            <a class="button product_type_simple add_to_cart_button ajax_add_to_cart btn_add_to_cart" href="" rel="nofollow" data-quantity="1" data-product_id="1547" data-product_sku="">
+                                                <i class="fa fa-shopping-cart"></i>  Add to cart
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="star-rating">
+                                        <span style="width:100%">
+                                            Rated 
+                                            <strong class="rating">5.00</strong>
+                                        </span>
+                                    </div>
+                                    <h3 class="product-name p-font">
+                                        <a href="/toys/product/{{ product.id }}">{{ product.name }}</a>
+                                    </h3>
+                                    <span class="price">
+                                        <span class="woocommerce-Price-amount amount">
+                                            <span class="woocommerce-Price-currencySymbol"><i class="fa fa-rub"></i></span> {{ product.price }}
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="woocommerce-pagination">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Список конкурсов</h1>
+
+    {% if contest_list %}
+    <ul>
+
+      {% for contest in contest_list %}
+      <li>
+        <a href="/contest/{{ contest.id }}">{{ contest.name }}</a> ({{contest.dt_start}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <!--p>There are no books in the library.</p-->
+    {% endif %}       
+{% endblock %}
